@@ -11,6 +11,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import { history } from './redux/reducers/index';
+import Preauth from "./pages/preauth/Preauth";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Page401 from "./pages/401/Page401";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,12 +24,18 @@ ReactDOM.render(
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/latest-news" exact>
-              <LatestNews />
+             <ProtectedRoute path='/latest-news'>
+                <LatestNews />
+             </ProtectedRoute>
+            <ProtectedRoute path='/popular-news'>
+                <PopularNews />
+             </ProtectedRoute>
+            <Route path="/preauth">
+              <Preauth />
             </Route>
-            <Route path="/popular-news" exact>
-              <PopularNews />
-            </Route>
+              <Route path="/401">
+                  <Page401 />
+              </Route>
           </Switch>
         </App>
       </ConnectedRouter>
