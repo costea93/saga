@@ -13,10 +13,6 @@ const Home = () => {
   const [counter, setCounter] = useState(0);
   const ref = useRef();
 
-  useOnClickOutside(ref, (evt) => {
-    console.log('click outside');
-  });
-
   useEffect(() => {
     if (!ref?.current) return;
 
