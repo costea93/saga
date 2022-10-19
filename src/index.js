@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
-import { ConnectedRouter } from 'connected-react-router';
-import Home from './pages/home/home';
-import LatestNews from './pages/latest-news/latest-news';
-import PopularNews from './pages/popular-news/popular-news';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import store from './redux/store';
-import { history } from './redux/reducers/index';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { Route, Switch } from "react-router-dom";
+import { ConnectedRouter } from "connected-react-router";
+import Home from "./pages/home/home";
+import LatestNews from "./pages/latest-news/latest-news";
+import PopularNews from "./pages/popular-news/popular-news";
+import RegisterPage from "./pages/register/RegisterPage";
+import SignIn from "./pages/signin/SignIn";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import store from "./redux/store";
+import { history } from "./redux/reducers/index";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -27,12 +29,18 @@ ReactDOM.render(
             <Route path="/popular-news" exact>
               <PopularNews />
             </Route>
+            <Route path="/register" exact>
+              <RegisterPage />
+            </Route>
+            <Route path="/login" exact>
+              <SignIn />
+            </Route>
           </Switch>
         </App>
       </ConnectedRouter>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
