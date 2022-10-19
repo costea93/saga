@@ -4,7 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { setSignUpStatus } from "../../redux/actions/actionCreator";
 
 const SignIn = function () {
-  const [user, setUser] = useState(() => {
+  const [user] = useState(() => {
     return JSON.parse(localStorage.getItem("user"));
   });
 

@@ -7,12 +7,7 @@ import {
   SET_SIGNUP_STATUS,
   SET_REGISTERED_USER,
 } from "../constants";
-import {
-  setLatestNews,
-  setPopularNews,
-  setSignUpStatus,
-  setRegisteredUser,
-} from "../actions/actionCreator";
+import { setLatestNews, setPopularNews } from "../actions/actionCreator";
 import { getLatestNews, getPopularNews } from "../../api/index";
 
 export function* handleLatestNews() {

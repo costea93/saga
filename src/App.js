@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import Header from "./components/header/header";
 
 const App = ({ children }) => {
-  const [signedStatus, setSignedStatus] = useState(() => {
+  const [signedStatus] = useState(() => {
     return JSON.parse(localStorage.getItem("isSigned"));
   });
   const history = useHistory();
