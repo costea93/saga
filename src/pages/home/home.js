@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState, memo, useCallback} from 'react';
-import {useOnClickOutside} from "../../clickOutsideHook";
+import React, { useEffect, useRef, useState, memo, useCallback } from 'react';
+import { useOnClickOutside } from "../../clickOutsideHook";
 
 // useState *
 // useEffect *
@@ -15,7 +15,7 @@ const Home = () => {
 
   useOnClickOutside(ref, (evt) => {
     console.log('click outside');
-  });
+  })
 
   useEffect(() => {
     if (!ref?.current) return;
