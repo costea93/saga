@@ -12,6 +12,9 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import { history } from './redux/reducers/index';
 
+import PrivateRoute from "./components/PrivateRoute";
+import Login from './pages/Login';
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -21,11 +24,14 @@ ReactDOM.render(
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/latest-news" exact>
+            <PrivateRoute path='/latest-news'>
               <LatestNews />
-            </Route>
-            <Route path="/popular-news" exact>
+            </PrivateRoute>
+            <PrivateRoute path='/popular-news'>
               <PopularNews />
+            </PrivateRoute>
+            <Route path="/login">
+              <Login />
             </Route>
           </Switch>
         </App>
