@@ -11,6 +11,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import { history } from './redux/reducers/index';
+import Page401 from './pages/unauthorized/unauthorized';
+import PrivateRoute from './components/privateRoute/privateRoute';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,12 +23,12 @@ ReactDOM.render(
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/latest-news" exact>
-              <LatestNews />
+            <PrivateRoute component={LatestNews} path="/latest-news" exact />
+            <PrivateRoute component={PopularNews} path="/popular-news" exact />
+            <Route path="/401" exact>
+              <Page401 />
             </Route>
-            <Route path="/popular-news" exact>
-              <PopularNews />
-            </Route>
+            
           </Switch>
         </App>
       </ConnectedRouter>
