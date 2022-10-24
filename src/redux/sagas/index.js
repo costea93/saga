@@ -4,8 +4,9 @@ import {
   SET_LATEST_NEWS_ERROR,
   SET_POPULAR_NEWS_ERROR,
   SET_LOADING_DATA,
+  SET_USER_AUTH,
 } from '../constants';
-import { setLatestNews, setPopularNews } from '../actions/actionCreator';
+import { setAuth, setLatestNews, setPopularNews } from '../actions/actionCreator';
 import { getLatestNews, getPopularNews } from '../../api/index';
 
 export function* handleLatestNews() {
@@ -38,8 +39,13 @@ export function* watchNewsSaga() {
   yield put({ type: SET_LOADING_DATA, payload: false });
 }
 
+export function* setUserAuth({ payload }) {
+  yield put(setAuth(payload))
+}
+
 export default function* rootSaga() {
   yield all([
-    takeLatest(LOCATION_CHANGE, watchNewsSaga)
+    takeLatest(LOCATION_CHANGE, watchNewsSaga),
+    takeLatest(SET_USER_AUTH, setUserAuth)
   ])
 }
