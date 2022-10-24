@@ -1,6 +1,4 @@
 import React, {useEffect, useRef, useState, memo, useCallback} from 'react';
-import {useOnClickOutside} from "../../clickOutsideHook";
-
 // useState *
 // useEffect *
 // useRef *
@@ -12,10 +10,6 @@ import {useOnClickOutside} from "../../clickOutsideHook";
 const Home = () => {
   const [counter, setCounter] = useState(0);
   const ref = useRef();
-
-  useOnClickOutside(ref, (evt) => {
-    console.log('click outside');
-  });
 
   useEffect(() => {
     if (!ref?.current) return;
