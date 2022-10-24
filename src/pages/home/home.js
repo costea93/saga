@@ -1,21 +1,8 @@
-import React, {useEffect, useRef, useState, memo, useCallback} from 'react';
-import {useOnClickOutside} from "../../clickOutsideHook";
-
-// useState *
-// useEffect *
-// useRef *
-// useCallback
-// useMemo
-// useContext
-// custom hook
+import React, { useEffect, useRef, useState, memo, useCallback } from 'react';
 
 const Home = () => {
   const [counter, setCounter] = useState(0);
   const ref = useRef();
-
-  useOnClickOutside(ref, (evt) => {
-    console.log('click outside');
-  });
 
   useEffect(() => {
     if (!ref?.current) return;
