@@ -1,7 +1,7 @@
 import { USER_LOGIN } from "../constants";
 
 const initialState = {
-    isLoggedIn: false,
+        isLoggedIn: !!localStorage.getItem("loggedState"),
 };
 
 const login = (state = initialState, { type, payload }) => {
